@@ -1,0 +1,114 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7fafc;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: white;
+}
+
+.header img {
+    width: 30px;
+}
+
+.nav-wrapper {
+    overflow-x: auto; /* Позволяет прокрутку */
+    white-space: nowrap;
+    scrollbar-width: none; /* Для Firefox */
+}
+
+.nav-wrapper::-webkit-scrollbar {
+    display: none; /* Для Chrome, Safari и других браузеров на основе WebKit */
+}
+
+.nav-tabs {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    background-color: white;
+}
+
+.nav-tabs li {
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.nav-tabs li.active {
+    background-color: #edf2f7; /* Светло-серый цвет для выделения */
+    border-radius: 30px;
+}
+
+.combo-section {
+    padding: 16px;
+    background-color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.card {
+    background: #edf2f7;
+    border-radius: 30px;
+    padding: 8px;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;  /* Ограничивает ширину изображения */
+    border-radius: 30px; /* Закругляет углы изображения */
+}
+
+@keyframes gb-popup-flip-page {
+    0% {
+        opacity: 0;
+        transform: perspective(800px) rotateY(-180deg) translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: perspective(800px) rotateY(0deg) translateY(0);
+    }
+}
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Включить прокрутку, если необходимо */
+    background-color: #edf2f7(0, 0, 0, 0.5); /* Черный фон с прозрачностью */
+}
+
+.modal.show {
+    display: block; /* Показываем модальное окно */
+    animation: gb-popup-flip-page 1s ease forwards; /* Применяем анимацию */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Центрирование */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ширина модального окна */
+    transform: translateY(30px); /* Начальное смещение */
+    transition: transform 0.3s ease; /* Плавное движение */
+    border-radius: 30px;
+}
